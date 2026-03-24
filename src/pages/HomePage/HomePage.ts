@@ -18,7 +18,7 @@ export const HomePage = (): Page => {
 
   const linkAbout = Link({
     id: "link-about",
-    ariaLabel: "link-about",
+    ariaLabel: "Navigate to About page",
     href: "/about",
     children: "Go to About Page",
     target: "_self",
@@ -26,14 +26,14 @@ export const HomePage = (): Page => {
 
   const linkAbout2 = Link({
     id: "link-about-2",
-    ariaLabel: "link-about-2",
+    ariaLabel: "Open About page in a new tab",
     href: "/about",
     children: "Go to About Page in Another Window",
   });
 
   const linkUsers = Link({
     id: "link-users",
-    ariaLabel: "link-about",
+    ariaLabel: "Navigate to Users page",
     href: "/users",
     children: "Go to Users Page",
     target: "_self",

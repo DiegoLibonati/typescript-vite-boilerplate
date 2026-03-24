@@ -43,7 +43,9 @@ describe("StorePage", () => {
     const user = userEvent.setup();
     renderPage();
 
-    const plusButton = screen.getByRole("button", { name: "counter plus 1" });
+    const plusButton = screen.getByRole("button", {
+      name: "Increase counter by 1",
+    });
     await user.click(plusButton);
 
     const counterNumber =
@@ -56,7 +58,7 @@ describe("StorePage", () => {
     renderPage();
 
     const minusButton = screen.getByRole("button", {
-      name: "counter minus 1",
+      name: "Decrease counter by 1",
     });
     await user.click(minusButton);
 

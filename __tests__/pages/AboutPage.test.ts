@@ -33,8 +33,12 @@ describe("AboutPage", () => {
   it("should render two links", () => {
     renderPage();
 
-    const linkProduct = screen.getByRole("link", { name: "link-product" });
-    const linkStore = screen.getByRole("link", { name: "link-store" });
+    const linkProduct = screen.getByRole("link", {
+      name: "Navigate to Product page 12",
+    });
+    const linkStore = screen.getByRole("link", {
+      name: "Navigate to Store page",
+    });
 
     expect(linkProduct).toBeInTheDocument();
     expect(linkProduct).toHaveAttribute("href", "#/products/12");

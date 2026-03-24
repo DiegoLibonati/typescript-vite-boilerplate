@@ -36,7 +36,7 @@ export const StorePage = (): Page => {
 
   const linkNotExists = Link({
     id: "link-not-exists",
-    ariaLabel: "link-not-exists",
+    ariaLabel: "Navigate to a non-existent page",
     href: "/pasdasdasdasd",
     children: "Go to Not Exists Page",
     target: "_self",
@@ -44,7 +44,7 @@ export const StorePage = (): Page => {
 
   const actionSubtract = Action({
     id: "counter-subtract",
-    ariaLabel: "counter minus 1",
+    ariaLabel: "Decrease counter by 1",
     onClick: (): void => {
       subtractCounter();
     },
@@ -54,7 +54,7 @@ export const StorePage = (): Page => {
 
   const actionPlus = Action({
     id: "counter-plus",
-    ariaLabel: "counter plus 1",
+    ariaLabel: "Increase counter by 1",
     onClick: (): void => {
       addCounter();
     },

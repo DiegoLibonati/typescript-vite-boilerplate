@@ -32,7 +32,7 @@ export const ProductPage = (params?: Record<string, string>): Page => {
 
   const actionProductId = Action({
     id: "action-product-id",
-    ariaLabel: "action-product-id",
+    ariaLabel: "Show current product ID",
     children: "Click Product Id",
     onClick: (e, id): void => {
       alertProductId(e, id, productId);
@@ -41,7 +41,7 @@ export const ProductPage = (params?: Record<string, string>): Page => {
 
   const linkNotExists = Link({
     id: "link-not-exists",
-    ariaLabel: "link-not-exists",
+    ariaLabel: "Navigate to a non-existent page",
     href: "/pasdasdasdasd",
     children: "Go to Not Exists Page",
     target: "_self",

@@ -39,7 +39,9 @@ describe("ProductPage", () => {
 
     renderPage({ id: "123" });
 
-    const button = screen.getByRole("button", { name: "action-product-id" });
+    const button = screen.getByRole("button", {
+      name: "Show current product ID",
+    });
     await user.click(button);
 
     expect(alertSpy).toHaveBeenCalledWith("Product ID: 123");
@@ -49,7 +51,9 @@ describe("ProductPage", () => {
   it("should render link to non-existent page", () => {
     renderPage();
 
-    const link = screen.getByRole("link", { name: "link-not-exists" });
+    const link = screen.getByRole("link", {
+      name: "Navigate to a non-existent page",
+    });
     expect(link).toHaveAttribute("href", "#/pasdasdasdasd");
   });
 });

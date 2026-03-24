@@ -46,6 +46,20 @@ describe("Link Component", () => {
     expect(link).toHaveAttribute("target", "_self");
   });
 
+  it("should set rel=noopener noreferrer when target is _blank", () => {
+    renderComponent(defaultProps);
+
+    const link = screen.getByRole("link", { name: "Test link" });
+    expect(link).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("should not set rel when target is _self", () => {
+    renderComponent({ ...defaultProps, target: "_self" });
+
+    const link = screen.getByRole("link", { name: "Test link" });
+    expect(link).toHaveAttribute("rel", "");
+  });
+
   it("should apply additional className when provided", () => {
     const propsWithClass: LinkProps = {
       ...defaultProps,

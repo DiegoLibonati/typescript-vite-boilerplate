@@ -14,7 +14,9 @@ export const Link = ({
   const a = document.createElement("a") as LinkComponent;
   a.id = id;
   a.href = href.startsWith("/") && !href.startsWith("/#") ? `#${href}` : href;
-  a.target = target ?? "_blank";
+  const resolvedTarget = target ?? "_blank";
+  a.target = resolvedTarget;
+  a.rel = resolvedTarget === "_blank" ? "noopener noreferrer" : "";
   a.className = `link ${className ?? ""}`;
   a.setAttribute("aria-label", ariaLabel);
 

@@ -93,9 +93,11 @@ npm run test:coverage
 | Key                                 | Description                                                                        |
 | ----------------------------------- | ---------------------------------------------------------------------------------- |
 | `VITE_REDIRECT_IF_ROUTE_NOT_EXISTS` | If `true`, redirects to home when route doesn't exist. If `false`, shows 404 page. |
+| `VITE_TEMPLATE_API_URL`             | Users API URL.                                                                     |
 
 ```bash
 VITE_REDIRECT_IF_ROUTE_NOT_EXISTS=false
+VITE_TEMPLATE_API_URL=https://jsonplaceholder.typicode.com
 ```
 
 ## Project Structure

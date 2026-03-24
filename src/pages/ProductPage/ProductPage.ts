@@ -22,13 +22,17 @@ export const ProductPage = (params?: Record<string, string>): Page => {
   main.innerHTML = `
     <h1 class="title">Product Page: ${productId}</h1>
 
-    <div class="links"></div>
+    <nav aria-label="Page navigation">
+      <ul class="links">
+        <li class="link-item-1"></li>
+      </ul>
+    </nav>
 
-    <div class="actions"></div> 
+    <section class="actions" aria-label="Product actions"></section> 
   `;
 
-  const links = main.querySelector<HTMLDivElement>(".links")!;
-  const actions = main.querySelector<HTMLDivElement>(".actions")!;
+  const linkItem1 = main.querySelector<HTMLLIElement>(".link-item-1")!;
+  const actions = main.querySelector<HTMLElement>(".actions")!;
 
   const actionProductId = Action({
     id: "action-product-id",
@@ -47,7 +51,7 @@ export const ProductPage = (params?: Record<string, string>): Page => {
     target: "_self",
   });
 
-  links.append(linkNotExists);
+  linkItem1.append(linkNotExists);
   actions.append(actionProductId);
 
   return main;

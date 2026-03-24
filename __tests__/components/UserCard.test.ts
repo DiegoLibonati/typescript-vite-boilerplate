@@ -42,12 +42,22 @@ describe("UserCard Component", () => {
       website: mockUser.website,
     });
 
-    expect(screen.getByText("John Doe")).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "John Doe" })
+    ).toBeInTheDocument();
     expect(screen.getByText("@johndoe")).toBeInTheDocument();
-    expect(screen.getByText("📧 john@example.com")).toBeInTheDocument();
-    expect(screen.getByText("📞 123-456-7890")).toBeInTheDocument();
-    expect(screen.getByText("🌐 johndoe.com")).toBeInTheDocument();
-    expect(screen.getByText("🏢 Doe Inc")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "john@example.com" })
+    ).toHaveAttribute("href", "mailto:john@example.com");
+    expect(screen.getByRole("link", { name: "123-456-7890" })).toHaveAttribute(
+      "href",
+      "tel:123-456-7890"
+    );
+    expect(screen.getByRole("link", { name: "johndoe.com" })).toHaveAttribute(
+      "href",
+      "https://johndoe.com"
+    );
+    expect(screen.getByText("Doe Inc", { exact: false })).toBeInTheDocument();
   });
 
   it("should render as an article element", () => {

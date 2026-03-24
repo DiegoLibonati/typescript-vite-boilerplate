@@ -11,10 +11,16 @@ export const AboutPage = (): Page => {
   main.innerHTML = `
     <h1 class="title">About Page</h1>
 
-    <div class="links"></div>
+    <nav aria-label="Page navigation">
+      <ul class="links">
+        <li class="link-item-1"></li>
+        <li class="link-item-2"></li>
+      </ul>
+    </nav>
   `;
 
-  const links = main.querySelector<HTMLDivElement>(".links")!;
+  const linkItem1 = main.querySelector<HTMLLIElement>(".link-item-1")!;
+  const linkItem2 = main.querySelector<HTMLLIElement>(".link-item-2")!;
 
   const linkProduct = Link({
     id: "link-product",
@@ -32,7 +38,8 @@ export const AboutPage = (): Page => {
     target: "_self",
   });
 
-  links.append(linkProduct, linkStore);
+  linkItem1.append(linkProduct);
+  linkItem2.append(linkStore);
 
   return main;
 };

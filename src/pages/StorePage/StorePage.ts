@@ -22,17 +22,28 @@ export const StorePage = (): Page => {
   main.innerHTML = `
     <h1 class="title">Store Page</h1> 
 
-    <div class="counter">
-      <h2 class="counter__number">0</h2>
-    </div>
+    <section class="counter" aria-label="Counter">
+      <output
+        class="counter__number"
+        aria-live="polite"
+        aria-label="Counter value: 0"
+        for="counter-subtract counter-plus"
+      >
+        0
+      </output>
+    </section>
 
-    <div class="links"></div>
+    <nav aria-label="Page navigation">
+      <ul class="links">
+        <li class="link-item-1"></li>
+      </ul>
+    </nav>
   `;
 
-  const links = main.querySelector<HTMLDivElement>(".links")!;
-  const counter = main.querySelector<HTMLDivElement>(".counter")!;
+  const linkItem1 = main.querySelector<HTMLLIElement>(".link-item-1")!;
+  const counter = main.querySelector<HTMLElement>(".counter")!;
   const counterNumber =
-    main.querySelector<HTMLHeadingElement>(".counter__number")!;
+    main.querySelector<HTMLOutputElement>(".counter__number")!;
 
   const linkNotExists = Link({
     id: "link-not-exists",
@@ -62,7 +73,7 @@ export const StorePage = (): Page => {
     children: "+",
   });
 
-  links.append(linkNotExists);
+  linkItem1.append(linkNotExists);
 
   counter.append(actionPlus);
   counter.insertBefore(actionSubtract, counterNumber);
@@ -71,6 +82,7 @@ export const StorePage = (): Page => {
     const state = templateStore.getState();
 
     counterNumber.textContent = String(state.counter);
+    counterNumber.ariaLabel = `Counter value: ${state.counter}`;
   };
 
   const unsubscribe = templateStore.subscribe("counter", renderCounter);

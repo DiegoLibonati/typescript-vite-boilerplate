@@ -15,12 +15,36 @@ export const UserCard = ({
   card.className = "user-card";
 
   card.innerHTML = `
-    <h3 class="user-card__name">${name}</h3>
-    <p class="user-card__username">@${username}</p>
-    <p class="user-card__info">📧 ${email}</p>
-    <p class="user-card__info">📞 ${phone}</p>
-    <p class="user-card__info">🌐 ${website}</p>
-    <p class="user-card__company">🏢 ${company.name}</p>
+      <header class="user-card__header">
+        <h3 class="user-card__name">${name}</h3>
+        <p class="user-card__username" aria-label="Username: ${username}">
+          @${username}
+        </p>
+      </header>
+
+      <address class="user-card__contact">
+        <p class="user-card__info">
+          <span aria-hidden="true">📧 </span>
+          <a href="mailto:${email}">${email}</a>
+        </p>
+        <p class="user-card__info">
+          <span aria-hidden="true">📞 </span>
+          <a href="tel:${phone}">${phone}</a>
+        </p>
+        <p class="user-card__info">
+          <span aria-hidden="true">🌐 </span>
+          <a href="https://${website}" target="_blank" rel="noopener noreferrer">
+            ${website}
+          </a>
+        </p>
+      </address>
+
+      <footer class="user-card__footer">
+        <p class="user-card__company">
+          <span aria-hidden="true">🏢 </span>
+          ${company.name}
+        </p>
+      </footer>
   `;
 
   return card;

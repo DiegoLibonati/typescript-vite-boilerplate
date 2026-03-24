@@ -13,14 +13,20 @@ export const UsersPage = (): Page => {
 
   main.innerHTML = `
     <h1 class="title">Users Page</h1>
-    <div class="users-list">
-      <p class="loading">Loading users...</p>
-    </div>
-    <div class="links"></div>
+
+    <p class="loading">Loading users...</p>
+
+    <ul class="users-list" aria-label="User list"></ul>
+
+    <nav aria-label="Page navigation">
+      <ul class="links">
+        <li class="link-item-1"></li>
+      </ul>
+    </nav>
   `;
 
   const usersList = main.querySelector<HTMLDivElement>(".users-list")!;
-  const links = main.querySelector<HTMLDivElement>(".links")!;
+  const linkItem1 = main.querySelector<HTMLLIElement>(".link-item-1")!;
 
   const linkHome = Link({
     id: "link-home",
@@ -30,7 +36,7 @@ export const UsersPage = (): Page => {
     target: "_self",
   });
 
-  links.appendChild(linkHome);
+  linkItem1.appendChild(linkHome);
 
   const loadUsers = async (): Promise<void> => {
     try {
@@ -38,7 +44,8 @@ export const UsersPage = (): Page => {
 
       usersList.innerHTML = "";
       users.forEach((user) => {
-        usersList.appendChild(
+        const li = document.createElement("li");
+        li.append(
           UserCard({
             company: user.company,
             email: user.email,
@@ -48,10 +55,19 @@ export const UsersPage = (): Page => {
             website: user.website,
           })
         );
+        usersList.appendChild(li);
+
+        const loading =
+          document.querySelector<HTMLParagraphElement>(".loading");
+        loading?.remove();
       });
     } catch {
-      usersList.innerHTML =
-        '<p class="error">Error loading users. Please try again.</p>';
+      const nav = document.querySelector<HTMLElement>("nav");
+      const paragraphError = document.createElement("p");
+      paragraphError.textContent = "Error loading users. Please try again.";
+      paragraphError.role = "alert";
+      paragraphError.className = "error";
+      nav?.before(paragraphError);
     }
   };
 

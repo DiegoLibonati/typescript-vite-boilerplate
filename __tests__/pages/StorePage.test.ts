@@ -35,8 +35,8 @@ describe("StorePage", () => {
     renderPage();
 
     const counterNumber =
-      document.querySelector<HTMLHeadingElement>(".counter__number");
-    expect(counterNumber?.textContent).toBe("0");
+      document.querySelector<HTMLOutputElement>(".counter__number");
+    expect(counterNumber?.textContent.trim()).toBe("0");
   });
 
   it("should increment counter when plus button clicked", async () => {
@@ -49,7 +49,7 @@ describe("StorePage", () => {
     await user.click(plusButton);
 
     const counterNumber =
-      document.querySelector<HTMLHeadingElement>(".counter__number");
+      document.querySelector<HTMLOutputElement>(".counter__number");
     expect(counterNumber?.textContent).toBe("1");
   });
 
@@ -63,7 +63,7 @@ describe("StorePage", () => {
     await user.click(minusButton);
 
     const counterNumber =
-      document.querySelector<HTMLHeadingElement>(".counter__number");
+      document.querySelector<HTMLOutputElement>(".counter__number");
     expect(counterNumber?.textContent).toBe("-1");
   });
 

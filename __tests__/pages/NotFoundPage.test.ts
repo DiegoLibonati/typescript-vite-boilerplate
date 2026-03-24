@@ -29,4 +29,14 @@ describe("NotFoundPage", () => {
     const title = screen.getByRole("heading", { name: "Not Found Page" });
     expect(title).toBeInTheDocument();
   });
+
+  it("should render the description", () => {
+    renderPage();
+
+    expect(
+      screen.getByText(
+        "The page you're looking for doesn't exist or has been moved."
+      )
+    ).toBeInTheDocument();
+  });
 });

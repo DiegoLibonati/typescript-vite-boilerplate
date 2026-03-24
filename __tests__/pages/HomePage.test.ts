@@ -39,15 +39,15 @@ describe("HomePage", () => {
     const linkUsers = document.querySelector<HTMLAnchorElement>("#link-users");
 
     expect(linkAbout).toBeInTheDocument();
-    expect(linkAbout).toHaveAttribute("href", "/#/about");
+    expect(linkAbout).toHaveAttribute("href", "#/about");
     expect(linkAbout).toHaveAttribute("target", "_self");
 
     expect(linkAbout2).toBeInTheDocument();
-    expect(linkAbout2).toHaveAttribute("href", "/#/about");
+    expect(linkAbout2).toHaveAttribute("href", "#/about");
     expect(linkAbout2).toHaveAttribute("target", "_blank");
 
     expect(linkUsers).toBeInTheDocument();
-    expect(linkUsers).toHaveAttribute("href", "/#/users");
+    expect(linkUsers).toHaveAttribute("href", "#/users");
     expect(linkUsers).toHaveAttribute("target", "_self");
   });
 });

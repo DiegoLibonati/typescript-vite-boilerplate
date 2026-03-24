@@ -19,7 +19,7 @@ export const AboutPage = (): Page => {
   const linkProduct = Link({
     id: "link-product",
     ariaLabel: "link-product",
-    href: "/#/products/12",
+    href: "/products/12",
     children: "Go to Product Page: 12",
     target: "_self",
   });
@@ -27,7 +27,7 @@ export const AboutPage = (): Page => {
   const linkStore = Link({
     id: "link-store",
     ariaLabel: "link-store",
-    href: "/#/store",
+    href: "/store",
     children: "Go to Store Page",
     target: "_self",
   });

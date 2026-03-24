@@ -72,6 +72,6 @@ describe("UsersPage", () => {
     renderPage();
 
     const linkHome = screen.getByRole("link", { name: "link-home" });
-    expect(linkHome).toHaveAttribute("href", "/#/home");
+    expect(linkHome).toHaveAttribute("href", "#/home");
   });
 });

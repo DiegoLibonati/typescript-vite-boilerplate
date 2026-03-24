@@ -1,31 +1,31 @@
 .user-card {
   background-color: var(--color-white);
-  border-radius: 8px;
-  padding: var(--spacing-md);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(var(--color-black-rgb), 0.1);
 }
 
 .user-card__name {
-  font-size: var(--font-size-lg);
+  font-size: 1.25rem;
   font-weight: 500;
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: 0.25rem;
   color: var(--color-primary);
 }
 
 .user-card__username {
-  color: #666;
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-gray-mid);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
 }
 
 .user-card__info {
-  font-size: var(--font-size-sm);
-  color: #444;
-  margin-bottom: var(--spacing-xs);
+  font-size: 0.875rem;
+  color: var(--color-gray-dark);
+  margin-bottom: 0.25rem;
 }
 
 .user-card__company {
-  font-size: var(--font-size-sm);
-  color: #888;
+  font-size: 0.875rem;
+  color: var(--color-gray-light);
   font-style: italic;
 }

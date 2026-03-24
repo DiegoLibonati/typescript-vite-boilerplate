@@ -50,6 +50,6 @@ describe("ProductPage", () => {
     renderPage();
 
     const link = screen.getByRole("link", { name: "link-not-exists" });
-    expect(link).toHaveAttribute("href", "/#/pasdasdasdasd");
+    expect(link).toHaveAttribute("href", "#/pasdasdasdasd");
   });
 });

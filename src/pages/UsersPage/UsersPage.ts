@@ -2,6 +2,7 @@ import type { Page } from "@/types/pages";
 
 import { Link } from "@/components/Link/Link";
 import { UserCard } from "@/components/UserCard/UserCard";
+
 import { userService } from "@/services/userService";
 
 import "@/pages/UsersPage/UsersPage.css";
@@ -24,7 +25,7 @@ export const UsersPage = (): Page => {
   const linkHome = Link({
     id: "link-home",
     ariaLabel: "link-home",
-    href: "/#/home",
+    href: "/home",
     children: "Go to Home Page",
     target: "_self",
   });
@@ -37,7 +38,16 @@ export const UsersPage = (): Page => {
 
       usersList.innerHTML = "";
       users.forEach((user) => {
-        usersList.appendChild(UserCard(user));
+        usersList.appendChild(
+          UserCard({
+            company: user.company,
+            email: user.email,
+            name: user.name,
+            phone: user.phone,
+            username: user.username,
+            website: user.website,
+          })
+        );
       });
     } catch {
       usersList.innerHTML =

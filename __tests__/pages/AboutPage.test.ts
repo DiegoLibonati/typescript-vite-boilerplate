@@ -37,11 +37,11 @@ describe("AboutPage", () => {
     const linkStore = screen.getByRole("link", { name: "link-store" });
 
     expect(linkProduct).toBeInTheDocument();
-    expect(linkProduct).toHaveAttribute("href", "/#/products/12");
+    expect(linkProduct).toHaveAttribute("href", "#/products/12");
     expect(linkProduct).toHaveAttribute("target", "_self");
 
     expect(linkStore).toBeInTheDocument();
-    expect(linkStore).toHaveAttribute("href", "/#/store");
+    expect(linkStore).toHaveAttribute("href", "#/store");
     expect(linkStore).toHaveAttribute("target", "_self");
   });
 });

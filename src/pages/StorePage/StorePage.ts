@@ -37,7 +37,7 @@ export const StorePage = (): Page => {
   const linkNotExists = Link({
     id: "link-not-exists",
     ariaLabel: "link-not-exists",
-    href: "/#/pasdasdasdasd",
+    href: "/pasdasdasdasd",
     children: "Go to Not Exists Page",
     target: "_self",
   });

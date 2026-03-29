@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import type { Page } from "@/types/pages";
 
-import { ProductPage } from "@/pages/ProductPage/ProductPage";
+import ProductPage from "@/pages/ProductPage/ProductPage";
 
 const renderPage = (params?: Record<string, string>): Page => {
   const container = ProductPage(params);

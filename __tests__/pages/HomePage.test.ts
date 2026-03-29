@@ -2,7 +2,7 @@ import { screen } from "@testing-library/dom";
 
 import type { Page } from "@/types/pages";
 
-import { HomePage } from "@/pages/HomePage/HomePage";
+import HomePage from "@/pages/HomePage/HomePage";
 
 const renderPage = (): Page => {
   const container = HomePage();

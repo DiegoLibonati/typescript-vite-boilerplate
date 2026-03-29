@@ -2,7 +2,7 @@ import { screen } from "@testing-library/dom";
 
 import type { Page } from "@/types/pages";
 
-import { AboutPage } from "@/pages/AboutPage/AboutPage";
+import AboutPage from "@/pages/AboutPage/AboutPage";
 
 const renderPage = (): Page => {
   const container = AboutPage();

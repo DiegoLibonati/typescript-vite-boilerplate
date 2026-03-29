@@ -3,7 +3,7 @@ import type { UserCardComponent } from "@/types/components";
 
 import "@/components/UserCard/UserCard.css";
 
-export const UserCard = ({
+const UserCard = ({
   name,
   username,
   email,
@@ -49,3 +49,5 @@ export const UserCard = ({
 
   return card;
 };
+
+export default UserCard;

@@ -3,7 +3,7 @@ import type { LinkComponent } from "@/types/components";
 
 import "@/components/Link/Link.css";
 
-export const Link = ({
+const Link = ({
   id,
   href,
   target,
@@ -24,3 +24,5 @@ export const Link = ({
 
   return a;
 };
+
+export default Link;

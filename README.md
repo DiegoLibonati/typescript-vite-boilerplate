@@ -278,7 +278,7 @@ const unsubscribe = templateStore.subscribe("counter", (value) => {
 **Location**: `src/components/Action/Action.ts`
 
 ```typescript
-export const Action = ({
+const Action = ({
   id,
   ariaLabel,
   children,
@@ -290,6 +290,8 @@ export const Action = ({
   // ... configure element
   return action;
 };
+
+export default Action;
 ```
 
 **Benefit**: Simple, functional approach to creating DOM elements with consistent configuration.
@@ -326,7 +328,7 @@ export const initRouter = (): void => {
 **Location**: `src/pages/StorePage/StorePage.ts`
 
 ```typescript
-export const StorePage = (): HTMLElement => {
+const StorePage = (): HTMLElement => {
   const unsubscribe = templateStore.subscribe("counter", renderCounter);
 
   main.cleanup = (): void => {
@@ -337,6 +339,8 @@ export const StorePage = (): HTMLElement => {
 
   return main;
 };
+
+export default StorePage;
 ```
 
 **Benefit**: Each page/component manages its own cleanup, preventing memory leaks.

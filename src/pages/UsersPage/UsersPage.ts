@@ -1,13 +1,13 @@
 import type { Page } from "@/types/pages";
 
-import { Link } from "@/components/Link/Link";
-import { UserCard } from "@/components/UserCard/UserCard";
+import Link from "@/components/Link/Link";
+import UserCard from "@/components/UserCard/UserCard";
 
 import { userService } from "@/services/userService";
 
 import "@/pages/UsersPage/UsersPage.css";
 
-export const UsersPage = (): Page => {
+const UsersPage = (): Page => {
   const main = document.createElement("main") as Page;
   main.className = "users-page";
 
@@ -79,3 +79,5 @@ export const UsersPage = (): Page => {
 
   return main;
 };
+
+export default UsersPage;

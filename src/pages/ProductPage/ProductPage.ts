@@ -1,7 +1,7 @@
 import type { Page } from "@/types/pages";
 
-import { Action } from "@/components/Action/Action";
-import { Link } from "@/components/Link/Link";
+import Action from "@/components/Action/Action";
+import Link from "@/components/Link/Link";
 
 import "@/pages/ProductPage/ProductPage.css";
 
@@ -13,7 +13,7 @@ const alertProductId = (
   alert(`Product ID: ${idProduct}`);
 };
 
-export const ProductPage = (params?: Record<string, string>): Page => {
+const ProductPage = (params?: Record<string, string>): Page => {
   const productId = params?.id ?? "unknown";
 
   const main = document.createElement("main");
@@ -56,3 +56,5 @@ export const ProductPage = (params?: Record<string, string>): Page => {
 
   return main;
 };
+
+export default ProductPage;

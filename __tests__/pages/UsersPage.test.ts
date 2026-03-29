@@ -2,7 +2,7 @@ import { screen } from "@testing-library/dom";
 
 import type { Page } from "@/types/pages";
 
-import { UsersPage } from "@/pages/UsersPage/UsersPage";
+import UsersPage from "@/pages/UsersPage/UsersPage";
 
 import { userService } from "@/services/userService";
 

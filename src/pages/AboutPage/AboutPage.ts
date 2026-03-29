@@ -1,10 +1,10 @@
 import type { Page } from "@/types/pages";
 
-import { Link } from "@/components/Link/Link";
+import Link from "@/components/Link/Link";
 
 import "@/pages/AboutPage/AboutPage.css";
 
-export const AboutPage = (): Page => {
+const AboutPage = (): Page => {
   const main = document.createElement("main");
   main.className = "about-page";
 
@@ -43,3 +43,5 @@ export const AboutPage = (): Page => {
 
   return main;
 };
+
+export default AboutPage;

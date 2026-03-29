@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import type { ActionProps } from "@/types/props";
 import type { ActionComponent } from "@/types/components";
 
-import { Action } from "@/components/Action/Action";
+import Action from "@/components/Action/Action";
 
 const renderComponent = (props: ActionProps): ActionComponent => {
   const container = Action(props);

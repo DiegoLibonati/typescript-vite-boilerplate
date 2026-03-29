@@ -1,7 +1,7 @@
 import type { Page } from "@/types/pages";
 
-import { Link } from "@/components/Link/Link";
-import { Action } from "@/components/Action/Action";
+import Link from "@/components/Link/Link";
+import Action from "@/components/Action/Action";
 
 import { templateStore } from "@/stores/templateStore";
 
@@ -15,7 +15,7 @@ const subtractCounter = (value: number): void => {
   templateStore.subtractCounter(value);
 };
 
-export const StorePage = (): Page => {
+const StorePage = (): Page => {
   const main = document.createElement("main") as Page;
   main.className = "store-page";
 
@@ -96,3 +96,5 @@ export const StorePage = (): Page => {
 
   return main;
 };
+
+export default StorePage;

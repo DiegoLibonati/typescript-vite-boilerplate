@@ -2,7 +2,7 @@ import type { Page } from "@/types/pages";
 
 import "@/pages/NotFoundPage/NotFoundPage.css";
 
-export const NotFoundPage = (): Page => {
+const NotFoundPage = (): Page => {
   const main = document.createElement("main");
   main.className = "not-found-page";
 
@@ -15,3 +15,5 @@ export const NotFoundPage = (): Page => {
 
   return main;
 };
+
+export default NotFoundPage;

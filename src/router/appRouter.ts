@@ -1,12 +1,12 @@
 import type { Page } from "@/types/pages";
 import type { MatchRoute, Route } from "@/types/router";
 
-import { HomePage } from "@/pages/HomePage/HomePage";
-import { AboutPage } from "@/pages/AboutPage/AboutPage";
-import { ProductPage } from "@/pages/ProductPage/ProductPage";
-import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
-import { StorePage } from "@/pages/StorePage/StorePage";
-import { UsersPage } from "@/pages/UsersPage/UsersPage";
+import HomePage from "@/pages/HomePage/HomePage";
+import AboutPage from "@/pages/AboutPage/AboutPage";
+import ProductPage from "@/pages/ProductPage/ProductPage";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
+import StorePage from "@/pages/StorePage/StorePage";
+import UsersPage from "@/pages/UsersPage/UsersPage";
 
 import envs from "@/constants/envs";
 

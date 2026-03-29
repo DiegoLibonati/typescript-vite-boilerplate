@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import type { Page } from "@/types/pages";
 
-import { StorePage } from "@/pages/StorePage/StorePage";
+import StorePage from "@/pages/StorePage/StorePage";
 
 import { templateStore } from "@/stores/templateStore";
 

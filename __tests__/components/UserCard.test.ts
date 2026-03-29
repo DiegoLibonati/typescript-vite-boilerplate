@@ -3,7 +3,7 @@ import { screen } from "@testing-library/dom";
 import type { UserCardProps } from "@/types/props";
 import type { UserCardComponent } from "@/types/components";
 
-import { UserCard } from "@/components/UserCard/UserCard";
+import UserCard from "@/components/UserCard/UserCard";
 
 import { mockUser } from "@tests/__mocks__/users.mock";
 

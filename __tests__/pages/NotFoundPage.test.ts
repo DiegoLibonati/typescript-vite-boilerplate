@@ -2,7 +2,7 @@ import { screen } from "@testing-library/dom";
 
 import type { Page } from "@/types/pages";
 
-import { NotFoundPage } from "@/pages/NotFoundPage/NotFoundPage";
+import NotFoundPage from "@/pages/NotFoundPage/NotFoundPage";
 
 const renderPage = (): Page => {
   const container = NotFoundPage();

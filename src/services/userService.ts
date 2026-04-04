@@ -1,6 +1,6 @@
 import type { User } from "@/types/app";
 
-export const userService = {
+const userService = {
   getAll: async (): Promise<User[]> => {
     const response = await fetch(`/users`);
 
@@ -21,3 +21,5 @@ export const userService = {
     return user;
   },
 };
+
+export default userService;

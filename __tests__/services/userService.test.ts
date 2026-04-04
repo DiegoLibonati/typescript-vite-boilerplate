@@ -1,4 +1,4 @@
-import { userService } from "@/services/userService";
+import userService from "@/services/userService";
 
 import { mockUser, mockUsers } from "@tests/__mocks__/users.mock";
 

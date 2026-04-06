@@ -59,19 +59,21 @@ No production dependencies - Pure Vanilla TypeScript
 
 ## Available Scripts
 
-| Command                 | Description                  |
-| ----------------------- | ---------------------------- |
-| `npm run dev`           | Start development server     |
-| `npm run build`         | Build for production         |
-| `npm run preview`       | Preview production build     |
-| `npm run test`          | Run tests                    |
-| `npm run test:watch`    | Run tests in watch mode      |
-| `npm run test:coverage` | Run tests with coverage      |
-| `npm run lint`          | Check for linting errors     |
-| `npm run lint:fix`      | Fix linting errors           |
-| `npm run format`        | Format code with Prettier    |
-| `npm run format:check`  | Check code formatting        |
-| `npm run type-check`    | Run TypeScript type checking |
+| Command                 | Description                   |
+| ----------------------- | ----------------------------- |
+| `npm run dev`           | Start development server      |
+| `npm run build`         | Build for production          |
+| `npm run preview`       | Preview production build      |
+| `npm run test`          | Run tests                     |
+| `npm run test:watch`    | Run tests in watch mode       |
+| `npm run test:coverage` | Run tests with coverage       |
+| `npm run lint`          | Check for linting errors      |
+| `npm run lint:fix`      | Fix linting errors            |
+| `npm run lint:all`      | Fix linting all (src - tests) |
+| `npm run format`        | Format code with Prettier     |
+| `npm run format:check`  | Check code formatting         |
+| `npm run format:all`    | Format Prettier (src - tests) |
+| `npm run type-check`    | Run TypeScript type checking  |
 
 ## Portfolio Link
 

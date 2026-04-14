@@ -1,4 +1,4 @@
-# Template Vite Vanilla TS
+# TypescriptSpaBoilerplate
 
 ## Educational Purpose
 
@@ -17,7 +17,22 @@ The application will open automatically at `http://localhost:3000`
 
 ## Description
 
-Personal template for building Single Page Applications with Vite, Vanilla TypeScript, and modern tooling. Includes routing, state management, component architecture, and a complete testing setup.
+**TypescriptSpaBoilerplate** is a starting point for building Single Page Applications with **Vanilla TypeScript** and **Vite**, without frameworks or runtime dependencies.
+
+**The problem it solves:** every time you start a vanilla TypeScript SPA from scratch you end up making the same decisions — how to handle routing, how to manage state, how to structure components, how to wire up linting, formatting, and tests. This boilerplate makes those decisions once so you can clone it and go straight to writing product logic.
+
+**What it includes:**
+
+- **Hash-based router** with dynamic segments (`:id`), automatic page cleanup on navigation, and configurable 404 handling via environment variables
+- **Observer-pattern store** — a generic abstract `Store<T>` class you extend to define your own state and reducers; subscriptions are per-key and granular, listeners only fire when the specific value they watch actually changes
+- **Factory function component model** — components and pages are plain TypeScript functions that return a configured `HTMLElement`, accept typed props, and expose an optional `cleanup()` method; no virtual DOM, no JSX
+- **Strict TypeScript config** — `strict`, `exactOptionalPropertyTypes`, `noUncheckedIndexedAccess`, `noImplicitReturns`, zero `any`
+- **ESLint + Prettier** wired together, enforced on every commit via Husky + lint-staged
+- **Jest 30 + ts-jest + jsdom + Testing Library** fully configured with path aliases, CSS mocks, and a 70% coverage threshold enforced across branches, functions, lines, and statements
+- **Typed environment variables** accessed through a constants layer so `import.meta.env` is never scattered across the codebase
+- **Path aliases** (`@/*` → `src/*`, `@tests/*` → `__tests__/*`) configured in TypeScript, Vite, and Jest
+
+**How to use it:** clone the repository, rename the project in `package.json`, delete the template pages and components you don't need (`StorePage`, `UsersPage`, etc.), replace `templateStore` with your own stores, and add your routes to the router. The infrastructure — routing, state, testing, linting — stays untouched.
 
 ## Technologies Used
 
@@ -77,7 +92,7 @@ No production dependencies - Pure Vanilla TypeScript
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/Template-Vite-Vanilla-TS`](https://www.diegolibonati.com.ar/#/project/Template-Vite-Vanilla-TS)
+[`https://www.diegolibonati.com.ar/#/project/typescript-spa-boilerplate`](https://www.diegolibonati.com.ar/#/project/typescript-spa-boilerplate)
 
 ## Testing
 
@@ -105,7 +120,7 @@ VITE_TEMPLATE_API_URL=https://jsonplaceholder.typicode.com
 ## Project Structure
 
 ```
-Template-Vite-Vanilla-TS/
+typescript-spa-boilerplate/
 ├── __tests__/
 │   ├── __mocks__/
 │   │   ├── file.mock.ts

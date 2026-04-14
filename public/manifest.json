@@ -1,7 +1,7 @@
 {
-  "name": "Template Vite Vanilla TS",
-  "short_name": "Template",
-  "description": "Personal template for carrying out a project with Vite Vanilla and TypeScript.",
+  "name": "TypescriptSpaBoilerplate",
+  "short_name": "TypescriptSpaBoilerplate",
+  "description": "TypescriptSpaBoilerplate is a starting point for building Single Page Applications with **Vanilla TypeScript** and **Vite**, without frameworks or runtime dependencies.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -14,6 +14,7 @@ const renderPage = (params?: Record<string, string>): Page => {
 describe("ProductPage", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.restoreAllMocks();
   });
 
   describe("rendering", () => {
@@ -56,7 +57,7 @@ describe("ProductPage", () => {
   describe("behavior", () => {
     it("should alert with the product ID when the button is clicked", async () => {
       const mockAlert = jest.spyOn(window, "alert").mockImplementation(() => {
-        // empty arrow fn
+        // empty fn
       });
       const user = userEvent.setup();
       renderPage({ id: "99" });
@@ -68,7 +69,7 @@ describe("ProductPage", () => {
 
     it("should alert with 'unknown' when no params are provided and the button is clicked", async () => {
       const mockAlert = jest.spyOn(window, "alert").mockImplementation(() => {
-        // empty arrow fn
+        // empty fn
       });
       const user = userEvent.setup();
       renderPage();

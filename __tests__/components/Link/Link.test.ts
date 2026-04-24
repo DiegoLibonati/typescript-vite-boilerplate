@@ -22,6 +22,7 @@ const renderComponent = (props: Partial<LinkProps> = {}): LinkComponent => {
 describe("Link", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.clearAllMocks();
   });
 
   describe("rendering", () => {

@@ -25,6 +25,7 @@ const renderComponent = (props: Partial<ActionProps> = {}): ActionComponent => {
 describe("Action", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.clearAllMocks();
   });
 
   describe("rendering", () => {

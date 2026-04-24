@@ -9,7 +9,7 @@ import { mockUsers } from "@tests/__mocks__/users.mock";
 const mockFetchSuccess = (data: unknown): void => {
   global.fetch = jest.fn().mockResolvedValue({
     ok: true,
-    json: () => data,
+    json: async () => await data,
   } as Response);
 };
 
@@ -33,6 +33,7 @@ const renderPage = (): Page => {
 describe("UsersPage", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.restoreAllMocks();
   });
 
   describe("rendering", () => {

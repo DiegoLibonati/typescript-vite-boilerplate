@@ -5,7 +5,7 @@ import { mockUser, mockUsers } from "@tests/__mocks__/users.mock";
 const mockFetchSuccess = (data: unknown): void => {
   global.fetch = jest.fn().mockResolvedValue({
     ok: true,
-    json: () => data,
+    json: async () => await data,
   } as Response);
 };
 
@@ -21,6 +21,10 @@ const mockFetchNetworkError = (message = "Network error"): void => {
 };
 
 describe("userService", () => {
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
   describe("getAll", () => {
     it("should return a list of users on success", async () => {
       mockFetchSuccess(mockUsers);

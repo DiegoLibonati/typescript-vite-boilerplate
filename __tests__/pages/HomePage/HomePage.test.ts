@@ -13,6 +13,7 @@ const renderPage = (): Page => {
 describe("HomePage", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.restoreAllMocks();
   });
 
   describe("rendering", () => {

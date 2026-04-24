@@ -25,6 +25,7 @@ const renderComponent = (
 describe("UserCard", () => {
   afterEach(() => {
     document.body.innerHTML = "";
+    jest.clearAllMocks();
   });
 
   describe("rendering", () => {

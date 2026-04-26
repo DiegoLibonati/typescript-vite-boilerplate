@@ -54,7 +54,7 @@ describe("Link", () => {
     });
 
     it("should render with empty content when children is not provided", () => {
-      renderComponent({ children: undefined });
+      renderComponent({ children: undefined! });
       expect(screen.getByRole("link")).toHaveTextContent("");
     });
   });
@@ -89,7 +89,7 @@ describe("Link", () => {
 
   describe("target and rel", () => {
     it("should default target to _blank when not provided", () => {
-      renderComponent({ target: undefined });
+      renderComponent({ target: undefined! });
       expect(screen.getByRole("link")).toHaveAttribute("target", "_blank");
     });
 

@@ -57,14 +57,14 @@ describe("Action", () => {
     });
 
     it("should use only the action class when no className is provided", () => {
-      renderComponent({ className: undefined });
+      renderComponent({ className: undefined! });
       const button = screen.getByRole("button");
       expect(button).toHaveClass("action");
       expect(button.className).toBe("action");
     });
 
     it("should render with empty content when children is not provided", () => {
-      renderComponent({ children: undefined });
+      renderComponent({ children: undefined! });
       expect(screen.getByRole("button")).toHaveTextContent("");
     });
   });

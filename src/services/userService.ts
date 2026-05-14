@@ -10,7 +10,7 @@ const userService = {
     return (await response.json()) as ResponseDirect<User[]>;
   },
 
-  getById: async (id: number): Promise<User> => {
+  getById: async (id: number): Promise<ResponseDirect<User>> => {
     const response = await fetch(`/users/${id}`);
 
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

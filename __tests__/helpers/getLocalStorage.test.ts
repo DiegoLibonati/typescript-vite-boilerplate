@@ -45,4 +45,16 @@ describe("getLocalStorage", () => {
       expect(getLocalStorage("empty")).toBeNull();
     });
   });
+
+  describe("when the stored value is invalid JSON", () => {
+    it("should return null", () => {
+      localStorage.setItem("broken", "{not valid json");
+      expect(getLocalStorage("broken")).toBeNull();
+    });
+
+    it("should return null when the value is a malformed array", () => {
+      localStorage.setItem("malformed", "[1, 2,");
+      expect(getLocalStorage("malformed")).toBeNull();
+    });
+  });
 });

@@ -61,7 +61,7 @@ export const renderRoute = (): void => {
   const hash = window.location.hash;
 
   if (!hash) {
-    window.location.href = `/#${PRINCIPAL_ROUTE}`;
+    window.location.hash = PRINCIPAL_ROUTE;
     return;
   }
 
@@ -71,9 +71,9 @@ export const renderRoute = (): void => {
   app.innerHTML = "";
 
   if (!matched) {
-    window.location.href = !REDIRECT_IF_ROUTE_NOT_EXISTS
-      ? `/#${ERROR_ROUTE}`
-      : `/#${PRINCIPAL_ROUTE}`;
+    window.location.hash = !REDIRECT_IF_ROUTE_NOT_EXISTS
+      ? ERROR_ROUTE
+      : PRINCIPAL_ROUTE;
     return;
   }
 

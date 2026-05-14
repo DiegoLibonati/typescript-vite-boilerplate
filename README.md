@@ -60,6 +60,7 @@ No production dependencies - Pure Vanilla TypeScript
 "jest": "^30.3.0"
 "jest-environment-jsdom": "^30.3.0"
 "lint-staged": "^16.2.7"
+"msw": "^2.14.6"
 "prettier": "^3.8.1"
 "ts-jest": "^29.4.6"
 "typescript": "^5.2.2"
@@ -106,6 +107,17 @@ You can also run the linters manually at any time:
 | `npm run format:check` | Check formatting without writing changes          |
 | `npm run format:all`   | Format both `src/` and `__tests__/`               |
 
+### Continuous Integration
+
+Every push and pull request to `main` runs the full pipeline on GitHub Actions (`.github/workflows/ci.yml`). Jobs are sequential — if one fails, subsequent ones are skipped:
+
+| Job              | Runs after       | Steps                                                               |
+| ---------------- | ---------------- | ------------------------------------------------------------------- |
+| `lint-and-audit` | —                | `npm run lint`, `npm run type-check`                                |
+| `testing`        | `lint-and-audit` | `npm run test`                                                      |
+| `build`          | `testing`        | `npm run build`                                                     |
+| `build-docker`   | `build`          | `docker build Dockerfile.development`, then `Dockerfile.production` |
+
 ## Env Keys
 
 Variables are loaded from `.env` (created in step 3 above) and exposed through `src/constants/envs.ts` so `import.meta.env` is never accessed directly from feature code.
@@ -126,9 +138,14 @@ VITE_TEMPLATE_API_URL=https://jsonplaceholder.typicode.com
 
 ```
 typescript-vite-boilerplate/
+├── .github/
+│   └── workflows/
+│       └── ci.yml
 ├── __tests__/
 │   ├── __mocks__/
 │   │   ├── file.mock.ts
+│   │   ├── mswHandlers.mock.ts
+│   │   ├── mswServer.mock.ts
 │   │   └── style.mock.ts
 │   ├── components/
 │   │   ├── Action.test.ts
@@ -146,6 +163,8 @@ typescript-vite-boilerplate/
 │   ├── stores/
 │   │   └── templateStore.test.ts
 │   ├── jest.constants.ts
+│   ├── jest.polyfills-undici.ts
+│   ├── jest.polyfills.ts
 │   └── jest.setup.ts
 ├── public/
 │   └── vite.svg
@@ -192,9 +211,11 @@ typescript-vite-boilerplate/
 ├── .vscode/
 │   ├── extensions.json
 │   └── settings.json
+├── .editorconfig
 ├── .env
 ├── .env.example
 ├── .gitignore
+├── .nvmrc
 ├── .prettierignore
 ├── .prettierrc
 ├── eslint.config.js
@@ -205,7 +226,7 @@ typescript-vite-boilerplate/
 ├── tsconfig.base.json
 ├── tsconfig.json
 ├── tsconfig.test.json
-├── vite.config.js
+├── vite.config.ts
 └── README.md
 ```
 
@@ -438,6 +459,8 @@ The app will be available at `http://localhost:3000`.
 ### Docker — Production
 
 Multi-stage build: Node 22 compiles the TypeScript and generates the static bundle (same `npm run build` invoked in the [Build](#build) section), then Nginx serves it. The final image contains no Node.js or source code.
+
+> **Note:** `nginx.conf` proxies `/users` to `https://jsonplaceholder.typicode.com` by default. Replace that URL with your own API before deploying. In development the proxy target comes from `VITE_TEMPLATE_API_URL` in `.env`.
 
 ```bash
 docker compose -f prod.docker-compose.yml up --build -d

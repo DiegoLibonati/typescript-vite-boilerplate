@@ -11,7 +11,7 @@ import UsersPage from "@/pages/UsersPage/UsersPage";
 import envs from "@/constants/envs";
 
 const PRINCIPAL_ROUTE = "/";
-const ERROR_ROUTE = "/error";
+const NOT_FOUND_ROUTE = "/not-found";
 const REDIRECT_IF_ROUTE_NOT_EXISTS = envs.redirectIfRouteNotExists;
 
 const routes: Route[] = [
@@ -20,7 +20,7 @@ const routes: Route[] = [
   { path: "/store", component: StorePage },
   { path: "/users", component: UsersPage },
   { path: "/products/:id", component: ProductPage },
-  { path: ERROR_ROUTE, component: NotFoundPage },
+  { path: NOT_FOUND_ROUTE, component: NotFoundPage },
 ];
 
 const matchRoute = (pathname: string): MatchRoute => {
@@ -72,7 +72,7 @@ export const renderRoute = (): void => {
 
   if (!matched) {
     window.location.hash = !REDIRECT_IF_ROUTE_NOT_EXISTS
-      ? ERROR_ROUTE
+      ? NOT_FOUND_ROUTE
       : PRINCIPAL_ROUTE;
     return;
   }
